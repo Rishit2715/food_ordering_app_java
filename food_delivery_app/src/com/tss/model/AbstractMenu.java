@@ -69,8 +69,11 @@ public abstract class AbstractMenu implements IMenu {
 		if (items.isEmpty()) {
 			System.out.println("No items in menu.");
 		} else {
+			System.out.printf("%-5s | %-25s | %-10s%n", "ID", "Name", "Price");
+			System.out.println("---------------------------------------------------");
+
 			for (MenuItem item : items) {
-				System.out.println(item);
+				System.out.printf("%-5d | %-25s | ₹%-9.2f%n", item.getId(), item.getName(), item.getPrice());
 			}
 		}
 	}
