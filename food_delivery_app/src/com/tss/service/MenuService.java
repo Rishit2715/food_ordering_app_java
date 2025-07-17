@@ -31,7 +31,7 @@ public class MenuService {
 				return;
 			}
 		}
-		System.out.println("❌ Item with ID " + newItem.getId() + " not found.");
+		System.out.println("Item with ID " + newItem.getId() + " not found.");
 	}
 
 	private boolean isDuplicate(MenuItem item, boolean isEdit) {
@@ -43,7 +43,7 @@ public class MenuService {
 		if (!isEdit) {
 			boolean idExists = items.stream().anyMatch(i -> i.getId() == id);
 			if (idExists) {
-				System.out.println("❌ Item with ID " + id + " already exists.");
+				System.out.println("Item with ID " + id + " already exists.");
 				return true;
 			}
 		}
@@ -52,7 +52,7 @@ public class MenuService {
 				.anyMatch(i -> (!isEdit || i.getId() != id) &&
 						i.getName().trim().equalsIgnoreCase(name));
 		if (nameExists) {
-			System.out.println("❌ Item with name \"" + item.getName() + "\" already exists.");
+			System.out.println("Item with name \"" + item.getName() + "\" already exists.");
 			return true;
 		}
 
@@ -60,7 +60,7 @@ public class MenuService {
 				.anyMatch(i -> (!isEdit || i.getId() != id) &&
 						i.getDescription().trim().equalsIgnoreCase(desc));
 		if (descExists) {
-			System.out.println("❌ Item with description \"" + item.getDescription() + "\" already exists.");
+			System.out.println("Item with description \"" + item.getDescription() + "\" already exists.");
 			return true;
 		}
 

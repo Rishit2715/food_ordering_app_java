@@ -50,15 +50,10 @@ public class Debit implements IPayment {
 	}
 
 	public void payment() {
-		String transactionId = UUID.randomUUID().toString();
 		LocalDateTime time = LocalDateTime.now();
 
 		System.out.println("Debit Details");
 		System.out.println("Name: " + userName);
-		System.out.println("Bank: " + bankName);
-		System.out.println("Card Number: " + cardNumber);
-		System.out.println("Amount Debited: " + amount);
-		System.out.println("Transaction ID: " + transactionId);
 		System.out.println("Timestamp: " + time);
 		System.out.println("Payment successful through Debit Card.");
 	}

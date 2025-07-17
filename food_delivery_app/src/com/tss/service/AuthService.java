@@ -24,9 +24,9 @@ public class AuthService {
             boolean success = userService.signUp(new User(username, password));
             if (success) {
                 currentUser = new User(username, password);
-                System.out.println("✅ Signup successful!");
+                System.out.println("Signup successful!");
             } else {
-                System.out.println("❌ Username already exists.");
+                System.out.println("Username already exists.");
             }
             return success;
 
@@ -38,19 +38,19 @@ public class AuthService {
 
                 if (userService.login(username, password)) {
                     currentUser = new User(username, password);
-                    System.out.println("✅ Login successful!");
+                    System.out.println("Login successful!");
                     return true;
                 } else {
                     if (attempts > 0)
-                        System.out.println("❌ Incorrect password. Attempts left: " + attempts);
+                        System.out.println("Incorrect password. Attempts left: " + attempts);
                     else
-                        System.out.println("❌ Too many failed attempts. Access denied.");
+                        System.out.println("Too many failed attempts. Access denied.");
                 }
             }
             return false;
 
         } else {
-            System.out.println("❌ Invalid choice.");
+            System.out.println("Invalid choice.");
             return false;
         }
     }

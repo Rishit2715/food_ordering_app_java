@@ -34,7 +34,6 @@ public class Upi implements IPayment {
 
 	public void payment() {
 		System.out.println("UPI Details");
-		System.out.println("UPI ID: " + upiId);
 		System.out.println("Amount: " + amount);
 		System.out.println("PIN Verified Successfully");
 		System.out.println("Payment successful via UPI.");

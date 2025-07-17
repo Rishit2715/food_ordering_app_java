@@ -3,6 +3,7 @@ package com.tss.model;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+
 public abstract class AbstractMenu implements IMenu {
 	protected List<MenuItem> items;
 	private final String fileName;
@@ -17,9 +18,9 @@ public abstract class AbstractMenu implements IMenu {
 		if (file.exists()) {
 			try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
 				items = (List<MenuItem>) ois.readObject();
-				System.out.println("✅ Loaded menu from file: " + fileName);
+				System.out.println("Loaded menu from file: " + fileName);
 			} catch (Exception e) {
-				System.out.println("⚠️ Could not load menu: " + e.getMessage());
+				System.out.println("Could not load menu: " + e.getMessage());
 			}
 		}
 	}
@@ -28,7 +29,7 @@ public abstract class AbstractMenu implements IMenu {
 		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName))) {
 			oos.writeObject(items);
 		} catch (IOException e) {
-			System.out.println("⚠️ Could not save menu: " + e.getMessage());
+			System.out.println("Could not save menu: " + e.getMessage());
 		}
 	}
 
@@ -36,17 +37,18 @@ public abstract class AbstractMenu implements IMenu {
 	public void addItem(MenuItem item) {
 		items.add(item);
 		saveToFile();
-		System.out.println("✅ " + item.getName() + " added to " + menuName + " Menu.");
+		System.out.println(item.getName() + " added to " + menuName + " Menu.");
 	}
 
 	@Override
 	public void removeItem(int id) {
+		//used predicate which returns boolean
 		boolean removed = items.removeIf(i -> i.getId() == id);
 		if (removed) {
-			System.out.println("✅ Item with ID " + id + " removed from " + menuName + " Menu.");
+			System.out.println("Item with ID " + id + " removed from " + menuName + " Menu.");
 			saveToFile();
 		} else {
-			System.out.println("❌ Item with ID " + id + " not found in " + menuName + " Menu.");
+			System.out.println("Item with ID " + id + " not found in " + menuName + " Menu.");
 		}
 	}
 
@@ -60,7 +62,7 @@ public abstract class AbstractMenu implements IMenu {
 				return;
 			}
 		}
-		System.out.println("❌ Item with ID " + newItem.getId() + " not found for update in " + menuName + " Menu.");
+		System.out.println("Item with ID " + newItem.getId() + " not found for update in " + menuName + " Menu.");
 	}
 
 	@Override
@@ -69,11 +71,13 @@ public abstract class AbstractMenu implements IMenu {
 		if (items.isEmpty()) {
 			System.out.println("No items in menu.");
 		} else {
-			System.out.printf("%-5s | %-25s | %-10s%n", "ID", "Name", "Price");
-			System.out.println("---------------------------------------------------");
+			System.out.printf("%-5s | %-25s | %-10s | %-40s%n", "ID", "Name", "Price", "Description");
+			System.out.println(
+					"-------------------------------------------------------------------------------------------");
 
 			for (MenuItem item : items) {
-				System.out.printf("%-5d | %-25s | ₹%-9.2f%n", item.getId(), item.getName(), item.getPrice());
+				System.out.printf("%-5d | %-25s | ₹%-9.2f | %-40s%n", item.getId(), item.getName(), item.getPrice(),
+						item.getDescription());
 			}
 		}
 	}

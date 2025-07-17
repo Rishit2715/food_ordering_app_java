@@ -29,11 +29,11 @@ public class Order  {
 
 	public void displayCart() {
 		if (items.isEmpty()) {
-			System.out.println("🛒 Your cart is empty.");
+			System.out.println("Your cart is empty.");
 			return;
 		}
 
-		System.out.println("\n🧾 Your Cart:");
+		System.out.println("\nYour Cart:");
 		for (OrderItem item : items) {
 			System.out.printf("- %s x%d = ₹%.2f\n", item.getItem().getName(), item.getQuantity(), item.getSubtotal());
 		}

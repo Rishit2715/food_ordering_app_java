@@ -34,7 +34,6 @@ public class OccasionalDiscountDecorator implements IDiscount {
         return baseDiscount;
     }
 
-    // Setters
     public void setExtraDiscount(double extraDiscount) {
         this.extraDiscount = extraDiscount;
     }

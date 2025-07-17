@@ -6,7 +6,7 @@ public class MenuFactory {
         return switch (type.toLowerCase()) {
             case "italian" -> new ItalianMenu();
             case "indian" -> new IndianMenu();
-//            case "chinese" -> new ChineseMenu();  // Create this class if not done
+            case "chinese" -> new ChineseMenu(); 
             default -> throw new IllegalArgumentException("❌ Unknown menu type: " + type);
         };
     }

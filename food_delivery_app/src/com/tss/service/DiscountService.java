@@ -8,7 +8,7 @@ import com.tss.model.OrderFacade;
 public class DiscountService {
     public static void manageDiscounts(OrderFacade facade, Scanner scanner) {
         while (true) {
-            System.out.println("\n🎁 Manage Discounts:");
+            System.out.println("\nManage Discounts:");
             System.out.println("1. Update Fixed Discount");
             System.out.println("2. Update Occasional Discount");
             System.out.println("3. View Current Discounts");
@@ -36,14 +36,14 @@ public class DiscountService {
                     facade.updateOccasionalDiscount(occAmt, date);
                 }
                 case 3 -> {
-                    System.out.println("\n📊 Current Discount Settings:");
-                    facade.displayDiscountSettings(); // ✅ This method must be implemented in OrderFacade
+                    System.out.println("\nCurrent Discount Settings:");
+                    facade.displayDiscountSettings();
                 }
                 case 4 -> {
-                    System.out.println("🔙 Returning to Admin Menu...");
+                    System.out.println("Returning to Admin Menu...");
                     return;
                 }
-                default -> System.out.println("❌ Invalid choice.");
+                default -> System.out.println("Invalid choice.");
             }
         }
     }

@@ -9,7 +9,6 @@ import com.tss.model.Order;
 
 public class OrderService {
     private Order order = new Order();
-    private static final List<String> deliveryPartners = Arrays.asList("Swiggy", "Zomato");
 
     public void addItemToOrder(MenuItem item, int quantity) {
         order.addItem(item, quantity);
@@ -19,7 +18,6 @@ public class OrderService {
         return order;
     }
 
-    public String getRandomDeliveryPartner() {
-        return deliveryPartners.get(new Random().nextInt(deliveryPartners.size()));
-    }
+
+   
 }
