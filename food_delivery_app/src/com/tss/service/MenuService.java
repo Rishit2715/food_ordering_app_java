@@ -1,9 +1,11 @@
 package com.tss.service;
 
-import com.tss.model.IMenu;
-import com.tss.model.MenuItem;
+
 
 import java.util.List;
+
+import com.tss.model.menu.IMenu;
+import com.tss.model.menu.MenuItem;
 
 public class MenuService {
 	private IMenu menu;

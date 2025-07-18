@@ -1,4 +1,4 @@
-package com.tss.model;
+package com.tss.model.menu;
 
 public class ItalianMenu extends AbstractMenu {
 	public ItalianMenu() {

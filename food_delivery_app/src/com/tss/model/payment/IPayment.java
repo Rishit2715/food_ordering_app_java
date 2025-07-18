@@ -1,4 +1,4 @@
-package com.tss.model;
+package com.tss.model.payment;
 
 public interface IPayment {
     void payment();

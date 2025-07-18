@@ -2,11 +2,13 @@ package com.tss.service;
 
 import java.util.Scanner;
 
-import com.tss.model.Credit;
-import com.tss.model.Debit;
-import com.tss.model.IPayment;
-import com.tss.model.PayPal;
-import com.tss.model.Upi;
+import com.tss.model.payment.Credit;
+import com.tss.model.payment.Debit;
+import com.tss.model.payment.IPayment;
+import com.tss.model.payment.PayPal;
+import com.tss.model.payment.Upi;
+
+
 
 public class PaymentService {
 

@@ -1,5 +1,6 @@
 package com.tss.model;
 
+import com.tss.model.menu.MenuItem;
 
 public class OrderItem   {
 	private MenuItem item;

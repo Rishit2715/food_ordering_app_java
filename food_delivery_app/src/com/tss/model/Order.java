@@ -3,6 +3,8 @@ package com.tss.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.tss.model.menu.MenuItem;
+
 public class Order  {
 	private List<OrderItem> items = new ArrayList<>();
 	private String customerName;

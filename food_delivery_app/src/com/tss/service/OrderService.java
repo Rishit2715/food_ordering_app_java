@@ -1,11 +1,7 @@
 package com.tss.service;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-
-import com.tss.model.MenuItem;
 import com.tss.model.Order;
+import com.tss.model.menu.MenuItem;
 
 public class OrderService {
     private Order order = new Order();

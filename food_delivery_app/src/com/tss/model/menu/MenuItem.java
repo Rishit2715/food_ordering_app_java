@@ -1,4 +1,4 @@
-package com.tss.model;
+package com.tss.model.menu;
 
 import java.io.Serializable;
 

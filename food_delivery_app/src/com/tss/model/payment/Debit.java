@@ -1,4 +1,4 @@
-package com.tss.model;
+package com.tss.model.payment;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
